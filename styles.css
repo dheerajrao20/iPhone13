@@ -1,0 +1,510 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  position: relative;
+  height: 100vh;
+  background: rgb(238, 228, 255);
+}
+.edge {
+  position: absolute;
+  top: 400px;
+  left: 312px;
+  height: 43px;
+  width: 660px;
+  background: linear-gradient(
+    to right,
+    rgb(78, 68, 133) 1%,
+    rgb(190, 187, 233) 3%,
+    rgb(109, 98, 156) 8%,
+    rgb(175, 167, 219) 20%,
+    rgb(109, 98, 156) 92%,
+    rgb(196, 193, 240) 97.5%,
+    rgb(94, 90, 131) 100%
+  );
+  border-radius: 0 0 20px 20px;
+  box-shadow: inset 0px 1px 2px 3px rgb(103, 90, 128);
+  z-index: -1;
+}
+.edge::before {
+  content: "";
+  position: absolute;
+  left: 60px;
+  height: 40px;
+  width: 8px;
+  background: linear-gradient(
+    to bottom,
+    rgb(146, 133, 206) 20%,
+    rgb(168, 155, 216) 60%,
+    rgb(137, 116, 194)
+  );
+}
+.edge::after /*vertical stripes*/ {
+  content: "";
+  position: absolute;
+  right: 60px;
+  height: 40px;
+  width: 8px;
+  background: linear-gradient(
+    to bottom,
+    rgb(146, 133, 206) 20%,
+    rgb(168, 155, 216) 60%,
+    rgb(137, 116, 194)
+  );
+}
+.volume-up {
+  position: absolute;
+  top: 19px;
+  left: 160px;
+  height: 13px;
+  width: 50px;
+  background: transparent;
+  border-radius: 50px;
+  box-shadow: 0px -0.7px 1px 1px rgb(85, 76, 112),
+    inset 0px 0.8px 1px 1px rgb(190, 187, 233);
+}
+.volume-up::before /*silent*/ {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: -60px;
+  height: 8px;
+  width: 30px;
+  background: transparent;
+  border-radius: 50px;
+  box-shadow: 0px -0.7px 0px 1px rgb(62, 53, 83),
+    inset 0px -1px 3px 2px rgb(88, 72, 110);
+}
+.volume-up::after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: -60px;
+  height: 5px;
+  width: 30px;
+  background: rgb(161, 151, 202);
+  border-bottom: 1px solid rgb(100, 82, 124);
+  border-top: 1.7px solid rgb(75, 56, 105);
+  border-radius: 50px;
+  box-shadow: inset 0px 0.9px 1px 0.5px rgb(189, 159, 231);
+}
+.volume-down {
+  position: absolute;
+  top: 19px;
+  left: 225px;
+  height: 13px;
+  width: 50px;
+  background: transparent;
+  border-radius: 50px;
+  box-shadow: 0px -0.7px 0px 1px rgb(77, 72, 105),
+    inset 0px 1px 1px 1px rgb(190, 187, 233);
+}
+.volume-down:before /*sim insert*/ {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 235px;
+  width: 75px;
+  height: 12px;
+  background: transparent;
+  border: rgb(110, 89, 134) solid 1px;
+  border-radius: 50px;
+}
+.volume-down::after /*sim insert*/ {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 300px;
+  width: 6px;
+  height: 5px;
+  background: rgb(16, 10, 24);
+  box-shadow: inset -0.5px -1px 1px rgb(231, 212, 255);
+  border-radius: 50%;
+}
+.screen-base {
+  position: absolute;
+  top: 320px;
+  left: 300px;
+  height: 90px;
+  width: 685px;
+  background-color: #000;
+  clip-path: polygon(13% 0%, 87% 0%, 100% 100%, 0% 100%);
+  border-radius: 40px;
+  box-shadow: inset 2px 1px 2px 4.5px rgb(190, 181, 235);
+}
+.screen-top {
+  position: absolute;
+  top: 322px;
+  left: 320px;
+  height: 80px;
+  width: 644px;
+  background: linear-gradient(
+    40deg,
+    rgb(170, 156, 231) 5%,
+    rgb(73, 57, 165) 20%,
+    rgb(16, 9, 77) 80%,
+    rgb(52, 0, 155) 93%
+  );
+  clip-path: polygon(12% 0%, 88% 0%, 100% 100%, 0% 100%);
+  border-radius: 28px;
+}
+.screen-top::before /*left*/ {
+  content: "";
+  position: absolute;
+  top: 64px;
+  left: 6px;
+  height: 20px;
+  width: 10px;
+  background: rgb(0, 0, 0);
+  clip-path: polygon(
+    57% 29%,
+    53% 46%,
+    57% 64%,
+    71% 80%,
+    20% 75%,
+    20% 28%,
+    71% 9%
+  );
+}
+.screen-top::after /*right*/ {
+  content: "";
+  position: absolute;
+  top: 65px;
+  right: 6px;
+  height: 20px;
+  width: 10px;
+  background: rgb(0, 0, 0);
+  clip-path: polygon(
+    57% 23%,
+    60% 39%,
+    57% 57%,
+    48% 75%,
+    98% 67%,
+    95% 28%,
+    48% 6%
+  );
+}
+.graphic-lower {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-85%, -38%);
+  height: 120px;
+  width: 300px;
+  border-radius: 50%;
+  background: radial-gradient(
+    rgba(97, 68, 194, 0.835) 40%,
+    rgb(234, 219, 255) 80%
+  );
+  z-index: 2;
+}
+.graphic-lower::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: -40px;
+  height: 50px;
+  width: 40px;
+  background: black;
+  border-radius: 1% 20% 20% 1%;
+  transform: skew(-44deg);
+}
+.graphic-lower:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(20%, -47%);
+  height: 105px;
+  width: 300px;
+  border-radius: 50%;
+  background: radial-gradient(
+    rgba(62, 47, 153, 0.925) 55%,
+    rgb(208, 197, 255) 85%
+  );
+  z-index: 3;
+}
+.graphic-middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  height: 98px;
+  width: 360px;
+  border-radius: 50%;
+  background: radial-gradient(
+    rgba(41, 10, 126, 0.911) 30%,
+    rgba(255, 50, 211, 0.5) 60%,
+    rgb(255, 255, 255) 82%
+  );
+  z-index: 4;
+}
+.graphic-middle::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: -37px;
+  height: 98px;
+  width: 434px;
+  border-radius: 50%;
+  box-shadow: inset 1px 1px 10px rgba(255, 255, 255, 0.236);
+}
+.reflection-screen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-51%, -57%);
+  height: 90px;
+  width: 560px;
+  clip-path: polygon(13% 0%, 87% 0%, 100% 100%, 0% 100%);
+  border-radius: 50px;
+  border: solid rgba(0, 0, 0, 0.25) 4px;
+  border-left: solid rgba(0, 0, 0, 0.25) 14px;
+  box-shadow: -2px 1px 4px 4.5px rgb(202, 181, 255);
+  opacity: 0.5;
+  z-index: 5;
+}
+.reflection-screen::before /*black top screen*/ {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: 25px;
+  height: 50px;
+  width: 35px;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 1% 20% 20% 1%;
+  transform: skew(-44deg);
+}
+.reflection-screen::after {
+  content: "";
+  position: absolute;
+  top: 30px;
+  left: 120px;
+  height: 70px;
+  width: 300px;
+  border-radius: 50%;
+  box-shadow: inset 1px 1px 9px 1px rgba(193, 187, 226, 0.4);
+}
+.edge-u {
+  position: absolute;
+  top: 335px;
+  left: 366px;
+  height: 36px;
+  width: 550px;
+  background: linear-gradient(
+    to right,
+    rgb(78, 68, 133) 1%,
+    rgb(189, 185, 236) 3%,
+    rgb(109, 98, 156) 8%,
+    rgb(175, 167, 219) 20%,
+    rgb(109, 98, 156) 92%,
+    rgb(189, 185, 236) 97.5%,
+    rgb(94, 90, 131) 100%
+  );
+  box-shadow: inset 1px 1px 2px 2px rgb(79, 64, 121);
+  border-radius: 0 0 20px 20px;
+  z-index: 6;
+}
+.edge-u::before {
+  content: "";
+  position: absolute;
+  left: 55px;
+  height: 34px;
+  width: 8px;
+  background: linear-gradient(
+    to bottom,
+    rgb(146, 133, 206) 20%,
+    rgb(168, 155, 216) 60%,
+    rgb(137, 116, 194)
+  );
+}
+.edge-u::after {
+  content: "";
+  position: absolute;
+  right: 50px;
+  height: 34px;
+  width: 8px;
+  background: linear-gradient(
+    to bottom,
+    rgb(146, 133, 206) 20%,
+    rgb(168, 155, 216) 60%,
+    rgb(137, 116, 194)
+  );
+}
+.lock {
+  position: absolute;
+  top: 14px;
+  left: 145px;
+  height: 11px;
+  width: 80px;
+  background: transparent;
+  border-radius: 50px;
+  border-right: solid rgb(179, 153, 209) 2px;
+  border-left: rgb(183, 157, 224) solid 2px;
+  border-bottom: solid rgb(111, 90, 136) 1px;
+  box-shadow: 0px -0.7px 0px 1px rgb(92, 86, 124);
+}
+.lock::after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 150px;
+  height: 14px;
+  width: 80px;
+  background: linear-gradient(to right, rgb(184, 170, 223), rgb(151, 141, 207));
+  border-radius: 50px;
+}
+.back {
+  position: absolute;
+  top: 284px;
+  left: 356px;
+  height: 60px;
+  width: 570px;
+  background: rgb(171, 162, 221);
+  clip-path: polygon(12% 0%, 88% 0%, 100% 100%, 0% 100%);
+  border-radius: 40px;
+  border-bottom: rgb(195, 187, 231) solid 2px;
+  z-index: 7;
+}
+.back::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: 1px;
+  height: 58px;
+  width: 570px;
+  background: linear-gradient(
+    to right,
+    rgb(204, 195, 247) 30%,
+    rgb(169, 160, 218) 60%
+  );
+  clip-path: polygon(12% 0%, 88% 0%, 100% 100%, 0% 100%);
+  border-radius: 40px;
+  border-bottom: rgb(125, 108, 163) solid 2px;
+}
+.back::after /*diagonal shading*/ {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 260px;
+  height: 50px;
+  width: 270px;
+  background: rgb(169, 160, 218);
+  transform: skew(-84deg);
+  overflow: hidden;
+}
+.camera-base {
+  position: absolute;
+  top: 29px;
+  left: 30px;
+  height: 22px;
+  width: 120px;
+  background: rgb(197, 187, 241);
+  border-radius: 30% 20% 30% 20%;
+  box-shadow: 1px 1px 1px 1px rgba(78, 58, 126, 0.507);
+  transform: skew(-45deg);
+  z-index: 9;
+}
+.camera-base::before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 72px;
+  height: 4px;
+  width: 20px;
+  background: rgb(240, 237, 227);
+  border-radius: 50%;
+  box-shadow: -3px -1px 2px 0px rgb(105, 85, 131), inset 1px 1px 1px 0.5px grey;
+}
+.camera-base::after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 20px;
+  height: 2px;
+  width: 11px;
+  background: rgb(148, 148, 148);
+  border-radius: 50%;
+  filter: blur(0.4px);
+}
+.camera1/*base*/ {
+  position: absolute;
+  top: 40px;
+  left: 30px;
+  height: 8px;
+  width: 48px;
+  background: linear-gradient(
+    to right,
+    rgb(146, 133, 206) 20%,
+    rgb(187, 174, 236) 60%,
+    rgb(137, 116, 194)
+  );
+  border-radius: 50%;
+  box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.562);
+  z-index: 9;
+}
+.camera1::after/*black lens*/ {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: 2px;
+  height: 8px;
+  width: 43px;
+  background: radial-gradient(rgb(6, 27, 95) 1%, black 30%);
+  border-radius: 50%;
+  transform: rotate(-1deg);
+  z-index: 10;
+}
+
+.camera2 {
+  position: absolute;
+  top: 30px;
+  left: 100px;
+  height: 8px;
+  width: 48px;
+  background: linear-gradient(
+    to right,
+    rgb(146, 133, 206) 20%,
+    rgb(187, 174, 236) 60%,
+    rgb(137, 116, 194)
+  );
+  border-radius: 50%;
+  box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.562);
+  z-index: 9;
+}
+.camera2::before {
+  content: "";
+  position: absolute;
+  top: -47px;
+  left: 402px;
+  height: 15px;
+  width: 20px;
+  background: rgb(255, 255, 255);
+  clip-path: polygon(
+    97% 6%,
+    76% 21%,
+    61% 34%,
+    48% 50%,
+    40% 68%,
+    33% 85%,
+    28% 100%,
+    9% 48%,
+    30% 10%
+  );
+  transform: rotate(72deg);
+  z-index: 10;
+}
+.camera2::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: 3px;
+  height: 8px;
+  width: 43px;
+  background: radial-gradient(rgb(9, 10, 94) 1%, black 40%);
+  border-radius: 50%;
+  transform: rotate(-1deg);
+  z-index: 9;
+}
