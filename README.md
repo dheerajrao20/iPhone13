@@ -21,11 +21,11 @@ Watch This on YouTube:
 </p>
 <h2 align="left">Contributors :</h2>
 <a href="https://github.com/dheerajrao20/iPhone13/graphs/contributors">
-    <img src="https://contrib.rocks/image?repo=dheerajrao20/NiPhone13" />
+    <img src="https://contrib.rocks/image?repo=dheerajrao20/iPhone13" />
   </a>
   
   <h2>Preview...</h2>
-  <img src="https://github.com/dheerajrao20/Navigator-navbar/blob/main/Images/nav.png?raw=true" />
+  <img src="https://github.com/dheerajrao20/iPhone13/blob/main/thumbnail.png?raw=true" />
 
 
   
